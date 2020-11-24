@@ -8,15 +8,14 @@ import {
 } from "react-router-dom";
 
 import logo from './heraldica.png';
-import Inicio from './Inicio'
-import Autenticacao from './Autenticacao'
-import Agendamento from './Agendamento'
-
+import Inicio from './Inicio.jsx'
+import Autenticacao from './Autenticacao.jsx'
+import Agendamento from './Agendamento.jsx'
 
 export default App =>
 
   <Router>
-    <div className="App col-6">
+    <div className="App container">
       <img src={logo} alt="Heraldica HNSa" height="100" />
       <h4>Hospital Naval de Salvador</h4>
       <p>Marcação de consultas online</p>

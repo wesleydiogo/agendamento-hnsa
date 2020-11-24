@@ -12,7 +12,7 @@ function Inicio() {
 
   return (
     <React.Fragment>
-      <form id="form-acesso" className="col-6 mx-auto py-4 border row d-flex justify-content-center">
+      <form id="form-acesso" className="col-auto mx-auto py-4 border row d-flex justify-content-center">
         <div className="form-group">
           <input
             type="text"
