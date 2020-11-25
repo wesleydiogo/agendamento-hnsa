@@ -16,6 +16,7 @@ function Autenticacao() {
                     Nome da mãe
                 </small>
                 <select class="form-control col" id="FormNomeDaMae">
+                    <option select disabled>Escolher...</option>
                     <option>{nomeMae[0]}</option>
                     <option>{nomeMae[1]}</option>
                     <option>{nomeMae[2]}</option>

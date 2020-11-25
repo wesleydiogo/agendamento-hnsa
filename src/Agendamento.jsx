@@ -55,39 +55,35 @@ function Agendamento() {
                     <div className="border card-body" id="radiosAgendamento">
 
                         <div className="btn-group" data-toggle="buttons">
-                            <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#reactCalendar">Consulta</button>
+                            <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#listaEspecialidades">Consulta</button>
                             <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#" disabled>Exame</button>
-
                         </div>
-
-                        <div className="form-group col-9 mx-auto collapse" id="lstEspec">
-                            <label for="lstEspec" className="form-text text-muted float-left">Especialidade</label>
+                        
+                        <div className="form-group col-9 mx-auto collapse" id="listaEspecialidades">
+                            <label for="listaEspecialidades" className="form-text text-muted float-left">Especialidade</label>
                             <select className="form-control">
                                 <option selected disabled>Escolher...</option>
-                                <option onClick={"dddd"}>Clinica Médica</option>
+                                <option>Clinica Médica</option>
                                 <option>Anestesista</option>
                                 <option>Ginecologista</option>
                                 <option>Cardiologista</option>
                                 <option>Infectologista</option>
                                 <option>Urologista</option>
+                                
                             </select>
+                            <button type="button" data-toggle="collapse" data-target="#listaMedicos">Ginecologista</button>
                         </div>
 
-                        <div className="form-group col-9 mx-auto collapse" id="lstEspec">
-                            <label for="lstEspec" className="form-text text-muted float-left">Médicos disponíveis</label>
+
+                        <div className="form-group col-9 mx-auto collapse" id="listaMedicos">
+                            <label for="listaMedicos" className="form-text text-muted float-left">Médicos disponíveis</label>
                             <select className="form-control">
                                 <option selected disabled>Escolher...</option>
                                 <option>Mateus Magalhães</option>
                                 <option>Vilas Boas</option>
                                 <option>Barbara Gouveia</option>
-                              </select>
-
+                            </select>
                         </div>
-                        
-                        <div className="collapse col-4 mx-auto" id="reactCalendar">
-                            <ReactCalendar />
-                        </div>
-
                     </div>
 
 

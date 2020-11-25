@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import * as ROUTES from './Routes'
+
 function Inicio() {
 
   /*var handleChange = ({ target }) => {
@@ -17,17 +19,14 @@ function Inicio() {
           <input
             type="text"
             name="NIP"
-            //value={this.state.NIP}
-            //onChange={this.handleChange}
             className="form-control"
-            aria-describedby="emailHelp"
             placeholder="Ex.: 13059173" />
-          <small id="emailHelp" className="form-text text-muted">
+          <small for="" className="form-text text-muted">
             Informe o seu NIP para ter acesso às vagas disponíveis.
           </small>
         </div>
-        <Link to="/autenticacao">
-          <button type="submit" for="NIP" className="btn btn-primary">Acessar</button>
+        <Link to={ROUTES.AUTENTICACAO}>
+          <button type="submit" for="NIP" className="btn btn-primary ml-2">Acessar</button>
         </Link>
       </form>
     </React.Fragment>
