@@ -18,18 +18,19 @@ import 'react-calendar/dist/Calendar.css'
 function Agendamento() {
 
     return (
-        <form className="col-auto mx-auto py-2 border">
-            {agendar()}
+        <Router>
+            <form className="col-auto mx-auto py-2 border">
+                {agendar()}
 
-            {consultasAgendadas()}
+                {consultasAgendadas()}
 
-            {historicoConsultas()}
+                {historicoConsultas()}
 
-            <Link to="/autenticacao">
-                <button type="submit" className="btn btn-primary my-2"><ChevronLeftIcon size={15} verticalAlign="middle" /> Voltar</button>
-            </Link>
-
-        </form>
+                <Link to="/autenticacao">
+                    <button type="submit" className="btn btn-primary my-2"><ChevronLeftIcon size={15} verticalAlign="middle" /> Voltar</button>
+                </Link>
+            </form>
+        </Router>
     )
 
     function agendar() {
@@ -58,35 +59,46 @@ function Agendamento() {
                             <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#listaEspecialidades">Consulta</button>
                             <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#" disabled>Exame</button>
                         </div>
-                        
-                        <div className="form-group col-9 mx-auto collapse" id="listaEspecialidades">
-                            <label for="listaEspecialidades" className="form-text text-muted float-left">Especialidade</label>
-                            <select className="form-control">
-                                <option selected disabled>Escolher...</option>
-                                <option>Clinica Médica</option>
-                                <option>Anestesista</option>
-                                <option>Ginecologista</option>
-                                <option>Cardiologista</option>
-                                <option>Infectologista</option>
-                                <option>Urologista</option>
-                                
-                            </select>
-                            <button type="button" data-toggle="collapse" data-target="#listaMedicos">Ginecologista</button>
-                        </div>
 
-
-                        <div className="form-group col-9 mx-auto collapse" id="listaMedicos">
-                            <label for="listaMedicos" className="form-text text-muted float-left">Médicos disponíveis</label>
-                            <select className="form-control">
-                                <option selected disabled>Escolher...</option>
-                                <option>Mateus Magalhães</option>
-                                <option>Vilas Boas</option>
-                                <option>Barbara Gouveia</option>
-                            </select>
-                        </div>
+                        <Switch>
+                            <div className="form-group mx-auto my-2 collapse" id="listaEspecialidades">
+                                <button className="list-group-item list-group-item-action list-group-item-secondary dropdown-toggle" type="button" data-toggle="collapse" data-target="#itensEspecialidade">
+                                    Especialidade
+                                    </button>
+                                <Route path="/1" exact>
+                                    <div className="collapse" id="itensEspecialidade">
+                                        <button className="list-group-item list-group-item-action">
+                                            Anestesista
+                                        </button>
+                                        <Link to="/2">
+                                            <button className="list-group-item list-group-item-action" data-target="#listaMedicos">
+                                                Ginecologista
+                                        </button>
+                                        </Link>
+                                        <button className="list-group-item list-group-item-action">
+                                            Cardiologista
+                                        </button>
+                                        <button className="list-group-item list-group-item-action disabled">
+                                            Infectologista
+                                        </button>
+                                        <button className="list-group-item list-group-item-action disabled">
+                                            Urologista
+                                        </button>
+                                    </div>
+                                </Route>
+                            </div>
+                            <Route path="/2">
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                                <div>WIADNWIDUWDUIAWADBDUIW</div>
+                            </Route>
+                        </Switch>
                     </div>
-
-
                 </div>
             </div>
         )
