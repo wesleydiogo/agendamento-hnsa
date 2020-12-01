@@ -1,5 +1,7 @@
 import React from "react"
+
 import { Link } from "react-router-dom"
+import * as ROUTES from "./Routes"
 
 function Autenticacao() {
     var nomeMae = [
@@ -33,7 +35,7 @@ function Autenticacao() {
                 <Link to="/">
                     <button type="submit" className="btn btn-primary">Voltar</button>
                 </Link>
-                <Link to="/agendamento">
+                <Link to={ROUTES.AGENDAMENTO}>
                     <button type="submit" className="btn btn-primary">Confirmar</button>
                 </Link>
             </div>

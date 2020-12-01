@@ -5,6 +5,9 @@ import {
     Route,
     Link,
 } from 'react-router-dom'
+
+import * as ROUTES from './Routes'
+
 import {
     DownloadIcon,
     ChevronLeftIcon,
@@ -27,7 +30,7 @@ function Agendamento() {
 
                 {historicoConsultas()}
 
-                <Link to="/autenticacao">
+                <Link to={ROUTES.AUTENTICACAO}>
                     <button type="submit" className="btn btn-primary my-2"><ChevronLeftIcon size={15} verticalAlign="middle" /> Voltar</button>
                 </Link>
             </form>

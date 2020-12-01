@@ -14,7 +14,7 @@ import Inicio from './Inicio.jsx'
 import Autenticacao from './Autenticacao.jsx'
 import Agendamento from './Agendamento.jsx'
 import Cadastro from './Cadastro.jsx'
-
+import AutenticaCadastro from './AutenticaCadastro.jsx'
 
 export default App =>
 
@@ -30,6 +30,7 @@ export default App =>
         <Route path={ROUTES.AUTENTICACAO} component={Autenticacao} />
         <Route path={ROUTES.AGENDAMENTO} component={Agendamento} />
         <Route path={ROUTES.CADASTRO} component={Cadastro} />
+        <Route path={ROUTES.AUTENTICACADASTRO} component={AutenticaCadastro}/>
       </Switch>
     </div>
   </Router>

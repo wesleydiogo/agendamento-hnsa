@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 import * as ROUTES from './Routes'
 
 function Inicio() {
@@ -14,13 +14,13 @@ function Inicio() {
 
   return (
     <React.Fragment>
-      <div className="card">
-        <h3 className="text-center py-4">Login</h3>
+      <div className="card py-2">
+        <h3 className="text-center">Login</h3>
         <form id="form-acesso" className="col-auto text-center mx-auto py-4 col" method="post" action="#"
         >
           <div className="form-group mx-auto text-left">
             <input type="text" name="NIP" className="form-control" placeholder="Informe o NIP" />
-            <small for="NIP" className="form-text text-muted pl-2">
+            <small for="NIP" className="form-text text-muted">
               Somente números. Ex.: 13059173
           </small>
           </div>
