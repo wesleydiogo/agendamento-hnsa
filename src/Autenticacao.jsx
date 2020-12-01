@@ -10,7 +10,7 @@ function Autenticacao() {
     ]
 
     return (
-        <form id="form-autenticacao" className="col-auto mx-auto py-4 border">
+        <form id="form-autenticacao" className="card col-auto mx-auto py-2">
             <div className="form-group">
                 <small for="FormNomeMae" id="emailHelp" className="form-text text-muted">
                     Nome da mãe

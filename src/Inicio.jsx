@@ -14,21 +14,31 @@ function Inicio() {
 
   return (
     <React.Fragment>
-      <form id="form-acesso" className="col-auto mx-auto py-4 border row d-flex justify-content-center">
-        <div className="form-group">
-          <input
-            type="text"
-            name="NIP"
-            className="form-control"
-            placeholder="Ex.: 13059173" />
-          <small for="" className="form-text text-muted">
-            Informe o seu NIP para ter acesso às vagas disponíveis.
+      <div className="card">
+        <h3 className="text-center py-4">Login</h3>
+        <form id="form-acesso" className="col-auto text-center mx-auto py-4 col" method="post" action="#"
+        >
+          <div className="form-group mx-auto text-left">
+            <input type="text" name="NIP" className="form-control" placeholder="Informe o NIP" />
+            <small for="NIP" className="form-text text-muted pl-2">
+              Somente números. Ex.: 13059173
           </small>
-        </div>
-        <Link to={ROUTES.AUTENTICACAO}>
-          <button type="submit" for="NIP" className="btn btn-primary ml-2">Acessar</button>
-        </Link>
-      </form>
+          </div>
+          <div class="form-group ">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Informe a senha" />
+          </div>
+          <div class="form-check my-2 text-left">
+            <input class="form-check-input" type="checkbox" id="gridCheck1"></input>
+            <label class="form-check-label" for="gridCheck">
+              Lembrar minha senha
+                </label>
+          </div>
+          <Link to={ROUTES.AUTENTICACAO}>
+            <button type="submit" for="NIP" className="btn btn-primary ml col">Acessar</button>
+          </Link>
+          <div className="py-2">Não tem uma conta? <a href={ROUTES.CADASTRO}>Cadastre-se</a></div>
+        </form>
+      </div>
     </React.Fragment>
   )
 }

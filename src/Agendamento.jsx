@@ -3,23 +3,24 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
 } from 'react-router-dom'
 import {
     DownloadIcon,
     ChevronLeftIcon,
-    XCircleIcon
 } from '@primer/octicons-react'
 import './Autenticacao.css'
 
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
+import LinhaTabConsultasAgendadas from './LinhaTabConsultasAgendadas'
+
 function Agendamento() {
 
     return (
         <Router>
-            <form className="col-auto mx-auto py-2 border">
+            <form className="card col-auto mx-auto py-2">
                 {agendar()}
 
                 {consultasAgendadas()}
@@ -45,14 +46,19 @@ function Agendamento() {
             return <Calendar onChange={onChange} value={date} />
         }
 
+        const linhaEspecialidade = nomeEspec =>
+            <button className="list-group-item list-group-item-action">
+                {nomeEspec}
+            </button>
+
         return (
             <div>
                 <button className="btn btn-primary my-2 dropdown-toggle" type="button" data-toggle="collapse" data-target="#agendarConsulta" role="button" aria-expanded="false" aria-controls="agendarConsulta">
                     Agendar
                 </button>
-
+                {/*ReactCalendar()*/}
                 <div className="collapse mx-auto table-responsive-lg row" id="agendarConsulta">
-
+            
                     <div className="border card-body" id="radiosAgendamento">
 
                         <div className="btn-group" data-toggle="buttons">
@@ -60,44 +66,19 @@ function Agendamento() {
                             <button className="btn btn-secondary" type="button" data-toggle="collapse" data-target="#" disabled>Exame</button>
                         </div>
 
-                        <Switch>
-                            <div className="form-group mx-auto my-2 collapse" id="listaEspecialidades">
-                                <button className="list-group-item list-group-item-action list-group-item-secondary dropdown-toggle" type="button" data-toggle="collapse" data-target="#itensEspecialidade">
-                                    Especialidade
-                                    </button>
-                                <Route path="/1" exact>
-                                    <div className="collapse" id="itensEspecialidade">
-                                        <button className="list-group-item list-group-item-action">
-                                            Anestesista
-                                        </button>
-                                        <Link to="/2">
-                                            <button className="list-group-item list-group-item-action" data-target="#listaMedicos">
-                                                Ginecologista
-                                        </button>
-                                        </Link>
-                                        <button className="list-group-item list-group-item-action">
-                                            Cardiologista
-                                        </button>
-                                        <button className="list-group-item list-group-item-action disabled">
-                                            Infectologista
-                                        </button>
-                                        <button className="list-group-item list-group-item-action disabled">
-                                            Urologista
-                                        </button>
-                                    </div>
-                                </Route>
+
+                        <div className="form-group mx-auto my-2 collapse" id="listaEspecialidades">
+                            <button className="list-group-item list-group-item-action list-group-item-secondary dropdown-toggle" type="button" data-toggle="collapse" data-target="#itensEspecialidade">
+                                Especialidade
+                            </button>
+                            <div className="collapse" id="itensEspecialidade">
+                                {linhaEspecialidade("Anestesista")}
+                                {linhaEspecialidade("Cardiologista")}
+                                {linhaEspecialidade("Urologista")}
+                                {linhaEspecialidade("Ginecologista")}
                             </div>
-                            <Route path="/2">
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                                <div>WIADNWIDUWDUIAWADBDUIW</div>
-                            </Route>
-                        </Switch>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -114,44 +95,18 @@ function Agendamento() {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Data:Hora</th>
+                                <th scope="col">Data<br />Hora</th>
                                 <th scope="col">Médico</th>
                                 <th scope="col">Especialidade</th>
                                 <th scope="col">Ação</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>hh:mm</td>
-                                <td>1º Ten Vilas Boas</td>
-                                <td>Ultrassonografia</td>
-                                <td>
-                                    <button className="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#modalDesmarcarConsulta">Desmarcar consulta <XCircleIcon size={15} /></button>
-
-                                    <div className="modal fade" id="modalDesmarcarConsulta">
-                                        <div className="modal-dialog">
-                                            <div className="modal-content">
-
-                                                <div className="modal-header">
-                                                    <h4 className="modal-title">Desmarcar consulta</h4>
-                                                    <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                                </div>
-
-                                                <div className="modal-body">
-                                                    Tem certeza que deseja desmarcar esta consulta?
-                                                </div>
-
-                                                <div className="modal-footer">
-                                                    <button type="button" className="btn btn-success" data-dismiss="modal">Confirmar</button>
-                                                    <button type="button" className="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
+                            <LinhaTabConsultasAgendadas data="10/12/2020" hora="08:40" medico="1º Ten Vilas Boas" especialidade="Cardiologista"></LinhaTabConsultasAgendadas>
+                            <LinhaTabConsultasAgendadas data="27/02/2021" hora="10:10" medico="1º Ten Magalhães" especialidade="Ortopedista"></LinhaTabConsultasAgendadas>
+                            <LinhaTabConsultasAgendadas data="27/02/2021" hora="10:10" medico="1º Ten Magalhães" especialidade="Ortopedista"></LinhaTabConsultasAgendadas>
+                            <LinhaTabConsultasAgendadas data="27/02/2021" hora="10:10" medico="1º Ten Magalhães" especialidade="Ortopedista"></LinhaTabConsultasAgendadas>
+                            <LinhaTabConsultasAgendadas data="27/02/2021" hora="10:10" medico="1º Ten Magalhães" especialidade="Ortopedista"></LinhaTabConsultasAgendadas>
                         </tbody>
                     </table>
                 </div>
