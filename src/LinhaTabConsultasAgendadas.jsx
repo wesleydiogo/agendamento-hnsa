@@ -9,7 +9,7 @@ export default function (props) {
             <td>{props.medico}</td>
             <td>{props.especialidade}</td>
             <td>
-                <button className="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#modalDesmarcarConsulta">Desmarcar consulta <XCircleIcon size={15} /></button>
+                <button className="btn btn-sm btn-danger" type="button" data-toggle="modal" data-target="#modalDesmarcarConsulta">Desmarcar</button>
 
                 <div className="modal fade" id="modalDesmarcarConsulta">
                     <div className="modal-dialog">

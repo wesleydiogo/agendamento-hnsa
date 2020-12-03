@@ -2,15 +2,51 @@ import React from 'react'
 import {
     Link,
 } from 'react-router-dom'
+import $ from 'jquery'
+
+import Paper from '@material-ui/core/Switch';
 
 const finalNumTelefone = 2564
 
+$(document).on("click", "#radioCodRegistro", function () {
+    $("#codRegistroPct").show("slow")
+
+    $("#inputCodRegistro").attr("disabled", false);
+    $("#inputSMS").attr("disabled", true);
+    $("#inputEmail").attr("disabled", true);
+
+    $("#smsPct").hide("slow")
+    $("#emailPct").hide("slow")
+})
+
+$(document).on("click", "#radioCodSMS", function () {
+    $("#smsPct").show("slow")
+
+    $("#inputSMS").attr("disabled", false);
+    $("#inputEmail").attr("disabled", true);
+    $("#inputCodRegistro").attr("disabled", true);
+
+    $("#codRegistroPct").hide("slow")
+    $("#emailPct").hide("slow")
+})
+
+$(document).on("click", "#radioEmail", function () {
+    $("#emailPct").show("slow")
+
+    $("#inputEmail").attr("disabled", false);
+    $("#inputCodRegistro").attr("disabled", true);
+    $("#inputSMS").attr("disabled", true);
+
+    $("#smsPct").hide("slow")
+    $("#codRegistroPct").hide("slow")
+})
+
 export default AutenticaCadastro =>
 
-    <div className="card mx-2 form-group">
-        <h3 className="mx-auto text-center py-2">Autenticação de cadastro</h3>
+    <div className="rounded shadow bg-white py-2 mx-auto col-sm-6">
+        <h3 className="mx-auto text-center border-bottom">Autenticação</h3>
 
-        <small className="card-header text-left font-weight-bold">Por medida de segurança, é necessário que você escolha uma das opções abaixo para autenticar seu cadastro.</small>
+        <small className="text-left font-weight-bold">Por medida de segurança, é necessário que você escolha uma das opções abaixo para autenticar seu cadastro.</small>
         <div className="card-body col" id="form-radios">
 
             <div className="form-group form-check">

@@ -1,3 +1,7 @@
+tbody {
+    overflow: visible;
+}
+
 .table-responsive::-webkit-scrollbar {
     -webkit-appearance: none;
 }

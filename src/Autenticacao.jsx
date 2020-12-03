@@ -12,7 +12,7 @@ function Autenticacao() {
     ]
 
     return (
-        <form id="form-autenticacao" className="card col-auto mx-auto py-2">
+        <form id="form-autenticacao" className="shadow py-2 mx-auto col-sm-6">
             <div className="form-group">
                 <small for="FormNomeMae" id="emailHelp" className="form-text text-muted">
                     Nome da mãe
@@ -32,7 +32,7 @@ function Autenticacao() {
             <input type="date" id="calendario" className="form-control " placeholder="01/01/1994" />
             
             <div className="px-3 mt-3 d-flex row justify-content-between">
-                <Link to="/">
+                <Link to={ROUTES.HOME}>
                     <button type="submit" className="btn btn-primary">Voltar</button>
                 </Link>
                 <Link to={ROUTES.AGENDAMENTO}>
