@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/agendamento-hnsa/static/css/main.1dbe9bf3.chunk.css",
+    "main.js": "/agendamento-hnsa/static/js/main.43c7f7e2.chunk.js",
+    "main.js.map": "/agendamento-hnsa/static/js/main.43c7f7e2.chunk.js.map",
+    "runtime-main.js": "/agendamento-hnsa/static/js/runtime-main.23ca8e93.js",
+    "runtime-main.js.map": "/agendamento-hnsa/static/js/runtime-main.23ca8e93.js.map",
+    "static/css/2.8cebfa1f.chunk.css": "/agendamento-hnsa/static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.3dad69bf.chunk.js": "/agendamento-hnsa/static/js/2.3dad69bf.chunk.js",
+    "static/js/2.3dad69bf.chunk.js.map": "/agendamento-hnsa/static/js/2.3dad69bf.chunk.js.map",
+    "index.html": "/agendamento-hnsa/index.html",
+    "static/css/2.8cebfa1f.chunk.css.map": "/agendamento-hnsa/static/css/2.8cebfa1f.chunk.css.map",
+    "static/css/main.1dbe9bf3.chunk.css.map": "/agendamento-hnsa/static/css/main.1dbe9bf3.chunk.css.map",
+    "static/js/2.3dad69bf.chunk.js.LICENSE.txt": "/agendamento-hnsa/static/js/2.3dad69bf.chunk.js.LICENSE.txt",
+    "static/media/heraldica.2e2f8af0.png": "/agendamento-hnsa/static/media/heraldica.2e2f8af0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23ca8e93.js",
+    "static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.3dad69bf.chunk.js",
+    "static/css/main.1dbe9bf3.chunk.css",
+    "static/js/main.43c7f7e2.chunk.js"
+  ]
+}
