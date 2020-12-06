@@ -9,36 +9,36 @@ import Paper from '@material-ui/core/Switch';
 const finalNumTelefone = 2564
 
 $(document).on("click", "#radioCodRegistro", function () {
-    $("#codRegistroPct").show("slow")
+    $("#codRegistroPct").slideDown("slow")
 
     $("#inputCodRegistro").attr("disabled", false);
     $("#inputSMS").attr("disabled", true);
     $("#inputEmail").attr("disabled", true);
 
-    $("#smsPct").hide("slow")
-    $("#emailPct").hide("slow")
+    $("#smsPct").slideUp("slow")
+    $("#emailPct").slideUp("slow")
 })
 
 $(document).on("click", "#radioCodSMS", function () {
-    $("#smsPct").show("slow")
+    $("#smsPct").slideDown("slow")
 
     $("#inputSMS").attr("disabled", false);
     $("#inputEmail").attr("disabled", true);
     $("#inputCodRegistro").attr("disabled", true);
 
-    $("#codRegistroPct").hide("slow")
-    $("#emailPct").hide("slow")
+    $("#codRegistroPct").slideUp("slow")
+    $("#emailPct").slideUp("slow")
 })
 
 $(document).on("click", "#radioEmail", function () {
-    $("#emailPct").show("slow")
+    $("#emailPct").slideDown("slow")
 
     $("#inputEmail").attr("disabled", false);
     $("#inputCodRegistro").attr("disabled", true);
     $("#inputSMS").attr("disabled", true);
 
-    $("#smsPct").hide("slow")
-    $("#codRegistroPct").hide("slow")
+    $("#smsPct").slideUp("slow")
+    $("#codRegistroPct").slideUp("slow")
 })
 
 export default AutenticaCadastro =>
@@ -56,12 +56,15 @@ export default AutenticaCadastro =>
                 <div className="collapse" id="codRegistroPct">
                     <input className="form-control form-control-sm" id="inputCodRegistro" type="text" placeholder="Digite o número de registro" />
                     <small id="emailHelp" for="registroPct" className="form-text text-muted">Compareça ao setor de agendamento do HNSa com a identidade em mãos para solicitar o seu número de registro.</small>
+                    
+                    <button className="btn btn-sm btn-success mt-1">Autenticar</button>
                 </div>
+
             </div>
 
             <div className="form-group form-check">
-                <input id="radioCodSMS" className="form-check-input" type="radio" name="gridRadios" data-toggle="" data-target="#smsPct" />
-                <label className="form-check-label">Por SMS</label>
+                <input id="radioCodSMS" className="form-check-input" type="radio" name="gridRadios" data-toggle="" data-target="#smsPct" disabled />
+                <label className="form-check-label">Por SMS <small style={{ color: "red" }}>(em breve)</small></label>
 
                 <div className="collapse" id="smsPct">
                     <div className="form-group">
@@ -75,8 +78,8 @@ export default AutenticaCadastro =>
 
 
             <div className="form-group form-check">
-                <input id="radioEmail" className="form-check-input" type="radio" name="gridRadios" data-toggle="" data-target="#emailPct" />
-                <label className="form-check-label" for="emailPct">Por email</label>
+                <input id="radioEmail" className="form-check-input" type="radio" name="gridRadios" data-toggle="" data-target="#emailPct" disabled />
+                <label className="form-check-label" for="emailPct">Por email <small style={{ color: "red" }}>(em breve)</small></label>
 
                 <div className="collapse" id="emailPct">
                     <div className="form-group">
